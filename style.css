@@ -126,3 +126,39 @@ body::before {
     border-radius: 4px;
     pointer-events: none;
 }
+
+@media (max-width: 420px) {
+    .board {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .cell {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+        border-radius: 14px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        border-radius: 16px;
+    }
+
+    .message {
+        font-size: 1rem;
+        text-align: center;
+    }
+}
