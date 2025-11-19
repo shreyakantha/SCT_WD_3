@@ -1,0 +1,128 @@
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: #f5faff;
+    margin: 0;
+    padding-top: 40px;
+    color: #3a4a56;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 2.4rem;
+    letter-spacing: 1px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 22px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    background: #ffffff;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background: #e8f4ff;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.message {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.board {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    grid-template-rows: repeat(3, 110px);
+    gap: 10px;
+    padding: 20px;
+}
+
+.cell {
+    width: 110px;
+    height: 110px;
+    background: #ffffff;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+    color: #3a8fff; 
+    box-shadow:
+        3px 3px 8px rgba(0,0,0,0.15),
+        -3px -3px 8px rgba(255, 255, 255, 0.093);
+}
+
+.cell:hover {
+    background: #f0f8ff;
+}
+
+.cell.taken {
+    cursor: not-allowed;
+    opacity: 0.75;
+}
+
+.cell.X {
+    color: #1E88E5;
+    text-shadow: 0 0 8px rgba(30, 136, 229, 0.35);
+    font-weight: 700;
+}
+
+.cell.O {
+    color: #00BCD4;
+    text-shadow: 0 0 8px rgba(0, 188, 212, 0.35);
+    font-weight: 700;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-repeat: repeat;
+    background-size: 250px;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.win-line {
+    position: absolute; 
+    background-color: #FF3B30;
+    height: 1px;
+    width: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 10;
+    transform-origin: left center;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    pointer-events: none;
+}
